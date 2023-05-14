@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-
 class MyHomePage extends StatelessWidget {
   final ScrollController scrollController1 = ScrollController();
   final ScrollController scrollController2 = ScrollController();
@@ -15,9 +14,11 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          const SizedBox(height: 60.0,),
+          const SizedBox(
+            height: 60.0
+          ),
           _buildRowList(scrollController1),
-          const SizedBox(height: 160.0), 
+          const SizedBox(height: 160.0),
           _buildRowList(scrollController2),
         ],
       ),
@@ -30,10 +31,10 @@ class MyHomePage extends StatelessWidget {
       child: ListView.builder(
         controller: scrollController,
         scrollDirection: Axis.horizontal,
-        itemCount: 2, 
+        itemCount: 2,
         itemBuilder: (BuildContext context, int index) {
           return Container(
-            width: 200.0, 
+            width: 200.0,
             height: 200.0,
             margin: const EdgeInsets.symmetric(horizontal: 8.0),
             decoration: BoxDecoration(
@@ -63,8 +64,7 @@ class MyHomePage extends StatelessWidget {
   }
 
   bool _isScrolling(ScrollController scrollController) {
-    return scrollController.position.userScrollDirection != ScrollDirection.idle;
+    return scrollController.position.userScrollDirection !=
+        ScrollDirection.idle;
   }
 }
-
-
